@@ -1,58 +1,60 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>de.bpauli</groupId>
-  <artifactId>test</artifactId>
-  <version>1.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <groupId>de.bpauli</groupId>
+    <artifactId>test</artifactId>
+    <version>1.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-  <name>test</name>
-  <url>http://maven.apache.org</url>
+    <name>test</name>
+    <url>http://maven.apache.org</url>
 
-  <scm>
-    <connection>scm:git:https://github.com/bpauli/test.git</connection>
-    <developerConnection>scm:git:git@github.com:bpauli/test.git</developerConnection>
-    <url>https://github.com/bpauli/test</url>
-    <tag>HEAD</tag>
-  </scm>
+    <scm>
+        <connection>scm:git:https://github.com/bpauli/test.git</connection>
+        <developerConnection>scm:git:git@github.com:bpauli/test.git</developerConnection>
+        <url>https://github.com/bpauli/test</url>
+        <tag>HEAD</tag>
+    </scm>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>2.5.1</version>
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.maven.release</groupId>
-            <artifactId>maven-release-oddeven-policy</artifactId>
-            <version>2.5.1</version>
-          </dependency>
-          <dependency>
-            <groupId>org.apache.maven.scm</groupId>
-            <artifactId>maven-scm-provider-gitexe</artifactId>
-            <version>1.9.1</version>
-          </dependency>
-        </dependencies>
-        <configuration>
-          <scmCommentPrefix>@releng [maven-scm] :</scmCommentPrefix>
-          <preparationGoals>clean install</preparationGoals>
-          <projectVersionPolicyId>OddEvenVersionPolicy</projectVersionPolicyId>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.1</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.release</groupId>
+                        <artifactId>maven-release-oddeven-policy</artifactId>
+                        <version>2.5.1</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-provider-gitexe</artifactId>
+                        <version>1.9.1</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <scmCommentPrefix>@releng [maven-scm] :</scmCommentPrefix>
+                    <preparationGoals>clean install</preparationGoals>
+                    <goals>install</goals>
+                    <projectVersionPolicyId>OddEvenVersionPolicy</projectVersionPolicyId>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
